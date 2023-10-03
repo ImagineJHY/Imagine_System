@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named init
+# Target rules for targets named prepare
 
 # Build rule for target.
-init: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 init
-.PHONY : init
+prepare: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prepare
+.PHONY : prepare
 
 # fast build rule for target.
-init/fast:
-	$(MAKE) -f CMakeFiles/init.dir/build.make CMakeFiles/init.dir/build
-.PHONY : init/fast
+prepare/fast:
+	$(MAKE) -f CMakeFiles/prepare.dir/build.make CMakeFiles/prepare.dir/build
+.PHONY : prepare/fast
 
 #=============================================================================
 # Target rules for targets named init_all
@@ -144,7 +144,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... init"
+	@echo "... prepare"
 	@echo "... init_all"
 .PHONY : help
 
