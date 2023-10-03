@@ -1,10 +1,12 @@
 cmake_minimum_required(VERSION 3.0)
 project(IMAGINE_SYSTEM)
 
-set(ENV{PATH} ${PATH}:${CMAKE_CURRENT_SOURCE_DIR}/worker/Imagine_Muduo/include)
-set(ENV{PATH} ${PATH}:${CMAKE_CURRENT_SOURCE_DIR}/worker/Imagine_ZooKeeper/include)
-set(ENV{PATH} ${PATH}:${CMAKE_CURRENT_SOURCE_DIR}/worker/Imagine_Rpc/include)
-set(ENV{PATH} ${PATH}:${CMAKE_CURRENT_SOURCE_DIR}/worker/Imagine_MapReduce/include)
+set(ENV{PATH} $ENV{PATH}:${CMAKE_CURRENT_SOURCE_DIR}/worker/Imagine_Muduo/include)
+set(ENV{PATH} $ENV{PATH}:${CMAKE_CURRENT_SOURCE_DIR}/worker/Imagine_ZooKeeper/include)
+set(ENV{PATH} $ENV{PATH}:${CMAKE_CURRENT_SOURCE_DIR}/worker/Imagine_Rpc/include)
+set(ENV{PATH} $ENV{PATH}:${CMAKE_CURRENT_SOURCE_DIR}/worker/Imagine_MapReduce/include)
+
+message($ENV{PATH})
 
 # add_custom_target(
 #     setup ALL # ALL代表每次构建都会运行这个目标
