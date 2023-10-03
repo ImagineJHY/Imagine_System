@@ -1,2 +1,7 @@
 # worker
 worker
+
+# cmake
+/build/CMakeFiles
+cmake_install.cmake
+CmakeCache.txt
