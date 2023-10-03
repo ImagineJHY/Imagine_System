@@ -3,7 +3,7 @@ project(IMAGINE_SYSTEM)
 
 add_custom_target(
     setup ALL # ALL代表每次构建都会运行这个目标
-    COMMAND ./setup.sh
+    COMMAND source ${CMAKE_SOURCE_DIR}/setup.sh
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} # 在哪个目录下执行命令
 )
 
