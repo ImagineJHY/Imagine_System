@@ -111,32 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named init_all
-
-# Build rule for target.
-init_all: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 init_all
-.PHONY : init_all
-
-# fast build rule for target.
-init_all/fast:
-	$(MAKE) -f CMakeFiles/init_all.dir/build.make CMakeFiles/init_all.dir/build
-.PHONY : init_all/fast
-
-#=============================================================================
-# Target rules for targets named setup
-
-# Build rule for target.
-setup: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 setup
-.PHONY : setup
-
-# fast build rule for target.
-setup/fast:
-	$(MAKE) -f CMakeFiles/setup.dir/build.make CMakeFiles/setup.dir/build
-.PHONY : setup/fast
-
-#=============================================================================
 # Target rules for targets named init
 
 # Build rule for target.
@@ -149,6 +123,19 @@ init/fast:
 	$(MAKE) -f CMakeFiles/init.dir/build.make CMakeFiles/init.dir/build
 .PHONY : init/fast
 
+#=============================================================================
+# Target rules for targets named init_all
+
+# Build rule for target.
+init_all: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 init_all
+.PHONY : init_all
+
+# fast build rule for target.
+init_all/fast:
+	$(MAKE) -f CMakeFiles/init_all.dir/build.make CMakeFiles/init_all.dir/build
+.PHONY : init_all/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -157,9 +144,8 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... init_all"
-	@echo "... setup"
 	@echo "... init"
+	@echo "... init_all"
 .PHONY : help
 
 
