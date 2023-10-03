@@ -17,7 +17,7 @@ submodules:
   - name: Imagine_MapReduce
     git_url: https://github.com/ImagineJHY/Imagine_MapReduce.git
     git_branch: ImagineMapReduce/update_format
-    git_commit: b944b9edaa97edd194a86ff0343558f59370452e
+    git_commit: 3e36f16abf78bea634bf8a8c07c423a2d3da79ed
   
   
 
