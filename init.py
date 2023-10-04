@@ -37,7 +37,7 @@ for submodule in submodules_info:
         # 子模块未存在，克隆并切换到指定commit
         clone_command = f"git clone --branch {submodule['git_branch']} {submodule['git_url']} {submodule_path}"
         subprocess.call(clone_command, shell=True)
-        checkout_command = ["git", "checkout", submodule['git_commit']]
+        checkout_command = ["git", "checkout", submodule['git_branch']]
         process = subprocess.Popen(checkout_command, cwd = submodule_path)
         process.wait()
         # with tools.chdir(submodule['name']):
