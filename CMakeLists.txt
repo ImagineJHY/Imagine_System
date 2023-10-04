@@ -36,6 +36,7 @@ if(IS_MAKE_PROJECT)
     endif()
 else()
     message("Constructing LIB: this is Imagine_System")
+endif()
 
 add_custom_target(
     prepare_submodule
