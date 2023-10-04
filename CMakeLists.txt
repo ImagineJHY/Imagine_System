@@ -48,7 +48,7 @@ add_custom_target(
     system_prepare # ALL # ALL代表每次构建都会运行这个目标
 )
 
-if(Exists ${IS_SUBMODULE_READY})
+if(EXISTS ${IS_SUBMODULE_READY})
     if(${IS_SUBMODULE_READY})
         add_custom_target(
             system_build # ALL # ALL代表每次构建都会运行这个目标
