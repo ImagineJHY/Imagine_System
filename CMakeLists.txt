@@ -48,12 +48,18 @@ add_custom_target(
     system_prepare # ALL # ALL代表每次构建都会运行这个目标
 )
 
-if(IS_SUBMODULE_READY)
-    add_custom_target(
-        system_build ALL # ALL代表每次构建都会运行这个目标
-    )
-    add_dependencies(system_build imagine_mapreduce imagine_rpc imagine_zookeeper imagine_muduo)
-    message("Constructing PROJECT: every subModule is ready, starting buid subModule")
+if(Exists IS_SUBMODULE_READY)
+    if(IS_SUBMODULE_READY)
+        add_custom_target(
+            system_build # ALL # ALL代表每次构建都会运行这个目标
+        )
+        add_dependencies(system_build imagine_mapreduce imagine_rpc imagine_zookeeper imagine_muduo)
+        message("Constructing PROJECT: every subModule is ready, starting buid subModule")
+    else()
+        message("Constructing PROJECT: Please cin make prepare to make every subModule ready!")
+    endif()
 else()
+    message("Constructing LIB: This is Imagine_System")
+endif()
 
 add_dependencies(system_prepare prepare_submodule)
