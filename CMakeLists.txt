@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.0)
 project(IMAGINE_SYSTEM)
 
-if(IS_MAKE_PROJECT)
+if(${IS_MAKE_PROJECT})
     set(IS_SUBMODULE_READY true)
-    if(EXISTS {IMAGINE_LIB_WORKER_DIR}/Imagine_MapReduce/CMakeLists.txt)
+    if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_MapReduce/CMakeLists.txt)
         message("Constructing PROJECT: subModule Imagine_MapReduce exists, add subModule...")
         add_subdirectory({IMAGINE_LIB_WORKER_DIR}/Imagine_MapReduce/CMakeLists.txt)
     else()
@@ -11,7 +11,7 @@ if(IS_MAKE_PROJECT)
         message("Constructing PROJECT: subModule Imagine_MapReduce NOT exists, cin make prepare to init it!")
     endif()
 
-    if(EXISTS {IMAGINE_LIB_WORKER_DIR}/Imagine_Rpc/CMakeLists.txt)
+    if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Rpc/CMakeLists.txt)
         message("Constructing PROJECT: subModule Imagine_Rpc exists, add subModule...")
         add_subdirectory({IMAGINE_LIB_WORKER_DIR}/Imagine_Rpc/CMakeLists.txt)
     else()
@@ -19,7 +19,7 @@ if(IS_MAKE_PROJECT)
         message("Constructing PROJECT: subModule Imagine_Rpc NOT exists, cin make prepare to init it!")
     endif()
 
-    if(EXISTS {IMAGINE_LIB_WORKER_DIR}/Imagine_ZooKeeper/CMakeLists.txt)
+    if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_ZooKeeper/CMakeLists.txt)
         message("Constructing PROJECT: subModule Imagine_ZooKeeper exists, add subModule...")
         add_subdirectory({IMAGINE_LIB_WORKER_DIR}/Imagine_ZooKeeper/CMakeLists.txt)
     else()
@@ -27,7 +27,7 @@ if(IS_MAKE_PROJECT)
         message("Constructing PROJECT: subModule Imagine_ZooKeeper NOT exists, cin make prepare to init it!")
     endif()
 
-    if(EXISTS {IMAGINE_LIB_WORKER_DIR}/Imagine_Muduo/CMakeLists.txt)
+    if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Muduo/CMakeLists.txt)
         message("Constructing PROJECT: subModule Imagine_Muduo exists, add subModule...")
         add_subdirectory({IMAGINE_LIB_WORKER_DIR}/Imagine_Muduo/CMakeLists.txt)
     else()
@@ -48,8 +48,8 @@ add_custom_target(
     system_prepare # ALL # ALL代表每次构建都会运行这个目标
 )
 
-if(Exists IS_SUBMODULE_READY)
-    if(IS_SUBMODULE_READY)
+if(Exists ${IS_SUBMODULE_READY})
+    if(${IS_SUBMODULE_READY})
         add_custom_target(
             system_build # ALL # ALL代表每次构建都会运行这个目标
         )
