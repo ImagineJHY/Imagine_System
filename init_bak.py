@@ -2,7 +2,7 @@ import os
 import subprocess
 import yaml
 
-with open('config/submodules.yaml', 'r') as file:
+with open('config/submodules_bak.yaml', 'r') as file:
     config_data = yaml.safe_load(file)
 
 # 获取所有子模块信息
