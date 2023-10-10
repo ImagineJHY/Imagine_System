@@ -7,7 +7,7 @@ submodules:
   - name: Imagine_ZooKeeper
     git_url: git@github.com:ImagineJHY/Imagine_ZooKeeper.git
     git_branch: ImagineZooKeeper/update_format
-    git_commit: fda2948467e770d0a5f52da61c4cdcbf36032a13
+    git_commit: 797d41eb148ad171b821d20efc2277819d8a1869
 
   - name: Imagine_Rpc
     git_url: git@github.com:ImagineJHY/Imagine_Rpc.git
