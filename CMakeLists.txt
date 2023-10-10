@@ -99,7 +99,17 @@ add_custom_target(
 )
 
 add_custom_target(
+    prepare_submodule_bak
+    COMMAND python3 ${CMAKE_CURRENT_SOURCE_DIR}/init_bak.py
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} # 在哪个目录下执行命令
+)
+
+add_custom_target(
     system_prepare # ALL # ALL代表每次构建都会运行这个目标
+)
+
+add_custom_target(
+    system_prepare_bak # ALL # ALL代表每次构建都会运行这个目标
 )
 
 if(DEFINED IS_SUBMODULE_READY)
@@ -120,3 +130,4 @@ else()
 endif()
 
 add_dependencies(system_prepare prepare_submodule)
+add_dependencies(system_prepare_bak prepare_submodule_bak)
