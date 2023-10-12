@@ -1,20 +1,20 @@
 submodules:
   - name: Imagine_Muduo
     git_url: https://github.com/ImagineJHY/Imagine_Muduo.git
-    git_branch: ImagineMuduo/update_format
-    git_commit: 333255a4a6baf9138551bda228033b7c906860f2
+    git_branch: ImagineMuduo/main
+    git_commit: 5472fc6c62d86df7411123021fefe7852b3e3c1a
 
   - name: Imagine_ZooKeeper
     git_url: https://github.com/ImagineJHY/Imagine_ZooKeeper.git
-    git_branch: ImagineZooKeeper/update_format
-    git_commit: 797d41eb148ad171b821d20efc2277819d8a1869
+    git_branch: ImagineZooKeeper/main
+    git_commit: 9e688308019ffc51eac8fe9028cec6c7181a6f9a
 
   - name: Imagine_Rpc
     git_url: https://github.com/ImagineJHY/Imagine_Rpc.git
-    git_branch: ImagineRpc/update_format
-    git_commit: a74c752a5d6598bf2ad15b9bbad5cbd4262d7ccb
+    git_branch: ImagineRpc/main
+    git_commit: 0731a0e33de425ac37427165c8babc1f5aba03c4
   
   - name: Imagine_MapReduce
     git_url: https://github.com/ImagineJHY/Imagine_MapReduce.git
-    git_branch: ImagineMapReduce/update_format
-    git_commit: 251c03c03d09137b5c55006b411f8b704b653439
+    git_branch: ImagineMapReduce/main
+    git_commit: 7c745dc4732f7a85771f21685703d32f00202a76
