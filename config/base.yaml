@@ -1,0 +1,5 @@
+submodules:
+  - name: yaml-cpp
+    git_url: https://github.com/jbeder/yaml-cpp.git
+    git_branch: master
+    git_commit: f791b955d8649751421911048a7c9dd967689811
