@@ -30,9 +30,6 @@ for submodule in submodules_info:
         checkout_command = ["git", "checkout", submodule['git_commit']]
         process = subprocess.Popen(checkout_command, cwd = submodule_path)
         process.wait()
-        # with tools.chdir(submodule['name']):
-        #     checkout_command = f"git checkout {submodule['git_commit']}"
-        #     subprocess.call(checkout_command, shell=True)
     else:
         # 子模块未存在，克隆并切换到指定commit
         clone_command = f"git clone --branch {submodule['git_branch']} {submodule['git_url']} {submodule_path}"
@@ -40,6 +37,3 @@ for submodule in submodules_info:
         checkout_command = ["git", "checkout", submodule['git_branch']]
         process = subprocess.Popen(checkout_command, cwd = submodule_path)
         process.wait()
-        # with tools.chdir(submodule['name']):
-        #     checkout_command = f"git checkout {submodule['git_commit']}"
-        #     subprocess.call(checkout_command, shell=True)
