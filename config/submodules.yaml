@@ -2,7 +2,7 @@ submodules:
   - name: Imagine_Tool
     git_url: https://github.com/ImagineJHY/Imagine_Tool.git
     git_branch: ImagineTool/main
-    git_commit: d3bcdfd96ed69c0ee1a9788855f4194903b688b7
+    git_commit: a2a476cf8235244c068a0051a19a66873ae55735
 
   - name: Imagine_Muduo
     git_url: https://github.com/ImagineJHY/Imagine_Muduo.git
