@@ -17,7 +17,7 @@ submodules:
   - name: Imagine_Rpc
     git_url: git@github.com:ImagineJHY/Imagine_Rpc.git
     git_branch: ImagineRpc/update_format
-    git_commit: a6b4746f43ed346d881db36300ec38ba0bbdf1b8
+    git_commit: 1b66cd824b2cd7ef32338ce9b6278640388c38a5
   
   - name: Imagine_MapReduce
     git_url: git@github.com:ImagineJHY/Imagine_MapReduce.git
