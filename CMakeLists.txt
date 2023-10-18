@@ -48,31 +48,14 @@ if(${IS_MAKE_PROJECT})
 # make lib
 else()
     if(DEFINED TARGET_LIB)
-        if(${TARGET_LIB} STREQUAL "Imagine_Tool")
 
-            message("[Constructing LIB][Imagine System]: Target lib is Imagine_Tool, no submodule is dependent")
+        if(${TARGET_LIB} STREQUAL "Imagine_Muduo")
 
-        elseif(${TARGET_LIB} STREQUAL "Imagine_Muduo")
-
-            message("[Constructing LIB][Imagine System]: Target lib is Imagine_Muduo, lib Imagine_Tool is dependent")
-
-            if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool/CMakeLists.txt)
-                message("[Constructing LIB][Imagine System]: lib Imagine_Tool exists, add subModule...")
-                add_subdirectory(${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool)
-            else()
-                message("[Constructing LIB][Imagine System]: lib Imagine_Tool NOT exists, cin make prepare to init it or add CPLUS_INCLUDE_PATH YOURSELF!")
-            endif()
+            message("[Constructing LIB][Imagine System]: Target lib is Imagine_Muduo, no submodule is dependent")
 
         elseif(${TARGET_LIB} STREQUAL "Imagine_ZooKeeper")
 
             message("[Constructing LIB][Imagine System]: Target lib is Imagine_ZooKeeper, lib Imagine_Muduo is dependent")
-
-            if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool/CMakeLists.txt)
-                message("[Constructing LIB][Imagine System]: lib Imagine_Tool exists, add subModule...")
-                add_subdirectory(${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool)
-            else()
-                message("[Constructing LIB][Imagine System]: lib Imagine_Tool NOT exists, cin make prepare to init it or add CPLUS_INCLUDE_PATH YOURSELF!")
-            endif()
 
             if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Muduo/CMakeLists.txt)
                 message("[Constructing LIB][Imagine System]: lib Imagine_Muduo exists, add subModule...")
@@ -84,13 +67,6 @@ else()
         elseif(${TARGET_LIB} STREQUAL "Imagine_Rpc")
 
             message("[Constructing LIB][Imagine System]: Target lib is Imagine_Rpc, lib Imagine_Muduo and Imagine_ZooKeeper is dependent")
-
-            if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool/CMakeLists.txt)
-                message("[Constructing LIB][Imagine System]: lib Imagine_Tool exists, add subModule...")
-                add_subdirectory(${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool)
-            else()
-                message("[Constructing LIB][Imagine System]: lib Imagine_Tool NOT exists, cin make prepare to init it or add CPLUS_INCLUDE_PATH YOURSELF!")
-            endif()
 
             if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Muduo/CMakeLists.txt)
                 message("[Constructing LIB][Imagine System]: lib Imagine_Muduo exists, add subModule...")
@@ -109,13 +85,6 @@ else()
         elseif(${TARGET_LIB} STREQUAL "Imagine_MapReduce")
 
             message("[Constructing LIB][Imagine System]: Target lib is Imagine_MapReduce, lib Imagine_Muduo, Imagine_ZooKeeper and Imagine_Rpc is dependent")
-
-            if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool/CMakeLists.txt)
-                message("[Constructing LIB][Imagine System]: lib Imagine_Tool exists, add subModule...")
-                add_subdirectory(${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool)
-            else()
-                message("[Constructing LIB][Imagine System]: lib Imagine_Tool NOT exists, cin make prepare to init it or add CPLUS_INCLUDE_PATH YOURSELF!")
-            endif()
 
             if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Muduo/CMakeLists.txt)
                 message("[Constructing LIB][Imagine System]: lib Imagine_Muduo exists, add subModule...")
@@ -175,8 +144,3 @@ else()
 endif()
 
 add_dependencies(system_prepare prepare_submodule)
-
-if(TARGET prepare_submodule)
-    add_subdirectory(${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool)
-    add_dependencies(system_prepare prepare_tool)
-endif()
