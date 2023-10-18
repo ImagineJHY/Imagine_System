@@ -6,14 +6,6 @@ if(${IS_MAKE_PROJECT})
 
     set(IS_SUBMODULE_READY true)
 
-    if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool/CMakeLists.txt)
-        message("[Constructing PROJECT][Imagine System]: subModule Imagine_Tool exists, add subModule...")
-        add_subdirectory(${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool)
-    else()
-        set(IS_SUBMODULE_READY false)
-        message("[Constructing PROJECT][Imagine System]: subModule Imagine_Tool NOT exists, cin make prepare to init it!")
-    endif()
-
     if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Muduo/CMakeLists.txt)
         message("[Constructing PROJECT][Imagine System]: subModule Imagine_Muduo exists, add subModule...")
         add_subdirectory(${IMAGINE_LIB_WORKER_DIR}/Imagine_Muduo)
