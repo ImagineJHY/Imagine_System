@@ -3,7 +3,9 @@ project(IMAGINE_SYSTEM)
 
 # make project
 if(${IS_MAKE_PROJECT})
+
     set(IS_SUBMODULE_READY true)
+
     if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool/CMakeLists.txt)
         message("[Constructing PROJECT][Imagine System]: subModule Imagine_Tool exists, add subModule...")
         add_subdirectory(${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool)
@@ -48,24 +50,11 @@ else()
     if(DEFINED TARGET_LIB)
         if(${TARGET_LIB} STREQUAL "Imagine_Tool")
 
-            message("[Constructing LIB][Imagine System]: Target lib is Imagine_Tool, lib thirdparty of github is dependent")
-
-            if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/yaml-cpp/CMakeLists.txt)
-                message("[Constructing LIB][Imagine System]: lib thirdparty of github yaml-cpp exists, add subModule...")
-                add_subdirectory(${IMAGINE_LIB_WORKER_DIR}/yaml-cpp)
-            else()
-                message("[Constructing LIB][Imagine System]: lib thirdparty of github yaml-cpp is NOT exists, cin make prepare to init it or add CPLUS_INCLUDE_PATH YOURSELF!")
-            endif()
+            message("[Constructing LIB][Imagine System]: Target lib is Imagine_Tool, no submodule is dependent")
 
         elseif(${TARGET_LIB} STREQUAL "Imagine_Muduo")
-            message("[Constructing LIB][Imagine System]: Target lib is Imagine_Muduo, lib Imagine_Tool is dependent")
 
-            if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/yaml-cpp/CMakeLists.txt)
-                message("[Constructing LIB][Imagine System]: lib thirdparty of github yaml-cpp exists, add subModule...")
-                add_subdirectory(${IMAGINE_LIB_WORKER_DIR}/yaml-cpp)
-            else()
-                message("[Constructing LIB][Imagine System]: lib thirdparty of github yaml-cpp is NOT exists, cin make prepare to init it or add CPLUS_INCLUDE_PATH YOURSELF!")
-            endif()
+            message("[Constructing LIB][Imagine System]: Target lib is Imagine_Muduo, lib Imagine_Tool is dependent")
 
             if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool/CMakeLists.txt)
                 message("[Constructing LIB][Imagine System]: lib Imagine_Tool exists, add subModule...")
@@ -77,13 +66,6 @@ else()
         elseif(${TARGET_LIB} STREQUAL "Imagine_ZooKeeper")
 
             message("[Constructing LIB][Imagine System]: Target lib is Imagine_ZooKeeper, lib Imagine_Muduo is dependent")
-
-            if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/yaml-cpp/CMakeLists.txt)
-                message("[Constructing LIB][Imagine System]: lib thirdparty of github yaml-cpp exists, add subModule...")
-                add_subdirectory(${IMAGINE_LIB_WORKER_DIR}/yaml-cpp)
-            else()
-                message("[Constructing LIB][Imagine System]: lib thirdparty of github yaml-cpp is NOT exists, cin make prepare to init it or add CPLUS_INCLUDE_PATH YOURSELF!")
-            endif()
 
             if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool/CMakeLists.txt)
                 message("[Constructing LIB][Imagine System]: lib Imagine_Tool exists, add subModule...")
@@ -102,13 +84,6 @@ else()
         elseif(${TARGET_LIB} STREQUAL "Imagine_Rpc")
 
             message("[Constructing LIB][Imagine System]: Target lib is Imagine_Rpc, lib Imagine_Muduo and Imagine_ZooKeeper is dependent")
-
-            if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/yaml-cpp/CMakeLists.txt)
-                message("[Constructing LIB][Imagine System]: lib thirdparty of github yaml-cpp exists, add subModule...")
-                add_subdirectory(${IMAGINE_LIB_WORKER_DIR}/yaml-cpp)
-            else()
-                message("[Constructing LIB][Imagine System]: lib thirdparty of github yaml-cpp is NOT exists, cin make prepare to init it or add CPLUS_INCLUDE_PATH YOURSELF!")
-            endif()
 
             if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool/CMakeLists.txt)
                 message("[Constructing LIB][Imagine System]: lib Imagine_Tool exists, add subModule...")
@@ -134,13 +109,6 @@ else()
         elseif(${TARGET_LIB} STREQUAL "Imagine_MapReduce")
 
             message("[Constructing LIB][Imagine System]: Target lib is Imagine_MapReduce, lib Imagine_Muduo, Imagine_ZooKeeper and Imagine_Rpc is dependent")
-
-            if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/yaml-cpp/CMakeLists.txt)
-                message("[Constructing LIB][Imagine System]: lib thirdparty of github yaml-cpp exists, add subModule...")
-                add_subdirectory(${IMAGINE_LIB_WORKER_DIR}/yaml-cpp)
-            else()
-                message("[Constructing LIB][Imagine System]: lib thirdparty of github yaml-cpp is NOT exists, cin make prepare to init it or add CPLUS_INCLUDE_PATH YOURSELF!")
-            endif()
 
             if(EXISTS ${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool/CMakeLists.txt)
                 message("[Constructing LIB][Imagine System]: lib Imagine_Tool exists, add subModule...")
@@ -185,23 +153,7 @@ add_custom_target(
 )
 
 add_custom_target(
-    prepare_thirdparty
-    COMMAND python3 ${CMAKE_CURRENT_SOURCE_DIR}/init_base.py
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} # 在哪个目录下执行命令
-)
-
-add_custom_target(
-    prepare_submodule_bak
-    COMMAND python3 ${CMAKE_CURRENT_SOURCE_DIR}/init_bak.py
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} # 在哪个目录下执行命令
-)
-
-add_custom_target(
     system_prepare # ALL # ALL代表每次构建都会运行这个目标
-)
-
-add_custom_target(
-    system_prepare_bak # ALL # ALL代表每次构建都会运行这个目标
 )
 
 if(DEFINED IS_SUBMODULE_READY)
@@ -222,5 +174,4 @@ else()
     message("[Constructing LIB][Imagine System]: This is Imagine_System")
 endif()
 
-add_dependencies(system_prepare prepare_submodule prepare_thirdparty)
-add_dependencies(system_prepare_bak prepare_submodule_bak)
+add_dependencies(system_prepare prepare_submodule tool_prepare)
