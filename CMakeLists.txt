@@ -174,4 +174,4 @@ else()
     message("[Constructing LIB][Imagine System]: This is Imagine_System")
 endif()
 
-add_dependencies(system_prepare prepare_submodule tool_prepare)
+add_dependencies(system_prepare tool_prepare prepare_submodule)
