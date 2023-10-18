@@ -174,4 +174,8 @@ else()
     message("[Constructing LIB][Imagine System]: This is Imagine_System")
 endif()
 
-add_dependencies(system_prepare tool_prepare prepare_submodule)
+add_dependencies(system_prepare prepare_submodule)
+
+if(TARGET prepare_submodule)
+    add_subdirectory(${IMAGINE_LIB_WORKER_DIR}/Imagine_Tool)
+    add_dependencies(system_prepare prepare_tool)
