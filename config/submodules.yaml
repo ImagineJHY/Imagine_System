@@ -7,7 +7,7 @@ submodules:
   - name: Imagine_ZooKeeper
     git_url: https://github.com/ImagineJHY/Imagine_ZooKeeper.git
     git_branch: ImagineZooKeeper/adapt_tool
-    git_commit: 9e3d8325acbeb89f3d35cce25afa1fb4e2a44706
+    git_commit: bf72ed4437d147a08652dd73bf2e0e4806110c8b
 
   - name: Imagine_Rpc
     git_url: https://github.com/ImagineJHY/Imagine_Rpc.git
