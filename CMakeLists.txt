@@ -6,13 +6,13 @@ set(R "${Esc}[0;31m")
 set(B "${Esc}[1;34m")
 set(E "${Esc}[m")
 
-if(DEFINED TARGET_LIB)
+if(DEFINED IMAGINE_TARGET_LIB)
 
-    if(${TARGET_LIB} STREQUAL "Imagine_Muduo")
+    if(${IMAGINE_TARGET_LIB} STREQUAL "Imagine_Muduo")
 
         message("${B}[Constructing LIB][Imagine System]: Target lib is Imagine_Muduo, no submodule is dependent${E}")
 
-    elseif(${TARGET_LIB} STREQUAL "Imagine_ZooKeeper")
+    elseif(${IMAGINE_TARGET_LIB} STREQUAL "Imagine_ZooKeeper")
 
         message("[${B}Constructing LIB][Imagine System]: Target lib is Imagine_ZooKeeper, lib Imagine_Muduo is dependent${E}")
 
@@ -23,7 +23,7 @@ if(DEFINED TARGET_LIB)
             message("${R}[Constructing LIB][Imagine System]: lib Imagine_Muduo NOT exists, cin make prepare to init it or add CPLUS_INCLUDE_PATH YOURSELF!${E}")
         endif()
 
-    elseif(${TARGET_LIB} STREQUAL "Imagine_Rpc")
+    elseif(${IMAGINE_TARGET_LIB} STREQUAL "Imagine_Rpc")
 
         message("${B}[Constructing LIB][Imagine System]: Target lib is Imagine_Rpc, lib Imagine_Muduo and Imagine_ZooKeeper is dependent${E}")
 
@@ -41,7 +41,7 @@ if(DEFINED TARGET_LIB)
             message("${R}[Constructing LIB][Imagine System]: lib Imagine_ZooKeeper NOT exists, cin make prepare to init it or add CPLUS_INCLUDE_PATH YOURSELF!${E}")
         endif()
 
-    elseif(${TARGET_LIB} STREQUAL "Imagine_MapReduce")
+    elseif(${IMAGINE_TARGET_LIB} STREQUAL "Imagine_MapReduce")
 
         message("${B}[Constructing LIB][Imagine System]: Target lib is Imagine_MapReduce, lib Imagine_Muduo, Imagine_ZooKeeper and Imagine_Rpc is dependent${E}")
 
