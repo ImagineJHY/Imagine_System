@@ -23,9 +23,9 @@ for submodule in submodules_info:
         process = subprocess.Popen(pull_command, cwd = submodule_path)
         process.wait()
 
-        # checkout_command = ["git", "checkout", submodule['git_branch']]
-        # process = subprocess.Popen(checkout_command, cwd = submodule_path)
-        # process.wait()
+        checkout_command = ["git", "checkout", submodule['git_branch']]
+        process = subprocess.Popen(checkout_command, cwd = submodule_path)
+        process.wait()
 
         checkout_command = ["git", "checkout", submodule['git_commit']]
         process = subprocess.Popen(checkout_command, cwd = submodule_path)
