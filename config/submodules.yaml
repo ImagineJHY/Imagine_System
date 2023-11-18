@@ -2,7 +2,7 @@ submodules:
   - name: Imagine_Muduo
     git_url: https://github.com/ImagineJHY/Imagine_Muduo.git
     git_branch: ImagineMuduo/update_interface
-    git_commit: a4bde0646e042f51617eb97dabc4590821160993
+    git_commit: 7f75fc121ca6d8c8ecc2fd66db19f7be010cbafa
 
   - name: Imagine_ZooKeeper
     git_url: https://github.com/ImagineJHY/Imagine_ZooKeeper.git
