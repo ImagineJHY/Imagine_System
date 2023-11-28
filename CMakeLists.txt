@@ -67,7 +67,7 @@ if(DEFINED IMAGINE_TARGET_LIB)
         endif()
     endif()
 else()
-    set(IMAGINE_TARGET_LIB "Imagine_MapReduce")
+    set(IMAGINE_TARGET_LIB "ALL")
 
     message("${B}[Constructing LIB][Imagine System]: build all lib${E}")
 
