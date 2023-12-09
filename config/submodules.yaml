@@ -2,7 +2,7 @@ submodules:
   - name: Imagine_Muduo
     git_url: https://github.com/ImagineJHY/Imagine_Muduo.git
     git_branch: ImagineMuduo/CMakeLists_file_fix
-    git_commit: 69d89416eeeff95ce70afa3018a3b3dd847b0d13 
+    git_commit: 3f28713d4e7f4fa12cd07e8044367a7082c820bb 
 
   - name: Imagine_ZooKeeper
     git_url: https://github.com/ImagineJHY/Imagine_ZooKeeper.git
