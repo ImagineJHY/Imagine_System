@@ -7,7 +7,7 @@ submodules:
   - name: Imagine_ZooKeeper
     git_url: https://github.com/ImagineJHY/Imagine_ZooKeeper.git
     git_branch: ImagineZooKeeper/CMakeLists_file_fix
-    git_commit: 2b0af1b220af27c651fef3aa68fa053650ee248a
+    git_commit: f23c6bcc1622f631596c571d2940a8de68249773
 
   - name: Imagine_Rpc
     git_url: https://github.com/ImagineJHY/Imagine_Rpc.git
