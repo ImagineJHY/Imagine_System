@@ -12,7 +12,7 @@ submodules:
   - name: Imagine_Rpc
     git_url: https://github.com/ImagineJHY/Imagine_Rpc.git
     git_branch: ImagineRpc/CMakeLists_file_fix
-    git_commit: 3b5b8e937e0fb4c876945823c6933865558c3453
+    git_commit: b823f21b866876bf7887550b29aa3bcf5cde04d3
   
   - name: Imagine_MapReduce
     git_url: https://github.com/ImagineJHY/Imagine_MapReduce.git
