@@ -17,4 +17,4 @@ submodules:
   - name: Imagine_MapReduce
     git_url: https://github.com/ImagineJHY/Imagine_MapReduce.git
     git_branch: ImagineMapReduce/CMakeLists_file_fix
-    git_commit: 35d767d85fe53faca7f625b8d1def2d9a312db6c
+    git_commit: fae0d87c441c6750d97c92f1d360a901c382d290
