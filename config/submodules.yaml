@@ -17,4 +17,4 @@ submodules:
   - name: Imagine_MapReduce
     git_url: https://github.com/ImagineJHY/Imagine_MapReduce.git
     git_branch: ImagineMapReduce/init_map_threadpool
-    git_commit: b7b83880e5c6f620115e678f91c5ee2d32c1ce91
+    git_commit: c826e6d2bd5172db1d6646f2b3c3658f3239719b
