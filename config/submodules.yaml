@@ -7,7 +7,7 @@ submodules:
   - name: Imagine_ZooKeeper
     git_url: https://github.com/ImagineJHY/Imagine_ZooKeeper.git
     git_branch: ImagineZooKeeper/init_statemachine
-    git_commit: 15dce2ff2c5b68709cdcaac2d4abd915635aaa83
+    git_commit: 2308c5c67cade9dceb23b621bdd3181569c3bb36
 
   - name: Imagine_Rpc
     git_url: https://github.com/ImagineJHY/Imagine_Rpc.git
