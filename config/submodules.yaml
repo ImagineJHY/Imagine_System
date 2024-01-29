@@ -2,7 +2,7 @@ submodules:
   - name: Imagine_Muduo
     git_url: https://github.com/ImagineJHY/Imagine_Muduo.git
     git_branch: ImagineMuduo/init_statemachine
-    git_commit: e236ecd6622560de4a873fef73aa1ba83cef7ee0 
+    git_commit: ef94ee5b55d63d79a4105d01e955492e22fbeb60 
 
   - name: Imagine_ZooKeeper
     git_url: https://github.com/ImagineJHY/Imagine_ZooKeeper.git
